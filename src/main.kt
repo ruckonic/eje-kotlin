@@ -46,7 +46,9 @@ fun ingresarEstudiantes(): Estudiante {
     do {
         println("Nombre de clase: ")
         val nombreClase = readLine().toString()
-        est.clases.add(nombreClase)
+        println("Nota de clase: ")
+        val notaClase = readLine().toString()
+        est.clases.add(Clase(nombreClase, notaClase.toInt()))
 
         println("""
             Deseas agregar otra clase S/N?
@@ -76,7 +78,7 @@ fun mostrarDatos(estudiantes: ArrayList<Estudiante>) {
         println("---- Clases:")
         if (e.clases.size > 0) {
             for (c in e.clases) {
-                println("\t\t $c")
+                println("\t\t ${c.nombreClase} Nota: ${c.nota}")
             }
         } else {
             println("\t No se agregaron clases")

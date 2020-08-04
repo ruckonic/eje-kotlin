@@ -1,0 +1,1 @@
+data class Clase(val nombreClase: String? = null, val nota: Int? = null)
